@@ -13,9 +13,9 @@
                         @csrf
                         @method('patch')
                         <x-text-input name="first_name" value="{{ old('first_name', $author->first_name) }}" />
+                        <x-input-error :messages="$errors->get('first_name')" class="mt-2" />
                         <x-text-input name="last_name" value="{{ old('last_name', $author->last_name) }}" />
-                        
-                        <x-input-error :messages="$errors->get('message')" class="mt-2" />
+                        <x-input-error :messages="$errors->get('last_name')" class="mt-2" />
                         <div class="mt-4 space-x-2">
                             <x-primary-button>{{ __('Save') }}</x-primary-button>
                             <a href="{{ route('authors.index') }}">{{ __('Cancel') }}</a>

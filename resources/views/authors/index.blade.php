@@ -1,7 +1,7 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Dashboard') }}
+            {{ __('Authors') }}
         </h2>
     </x-slot>
 
@@ -15,7 +15,6 @@
                             <div class="flex border-b justify-between items-center">
                             <p>{{ $author->first_name }} {{ $author->last_name }}</p>
                             <div class="grid grid-cols-2 gap-2 pt-2">
-<<<<<<< HEAD
                                 <a href="{{ route('authors.edit', $author) }}">
                                     {{ __('Edit') }}
                                 </a>
@@ -30,17 +29,6 @@
 
                                 </form>
                                 
-=======
-                                <button>edit</button>
-                                <form method="POST" action="{{ route('authors.destroy', $author) }}">
-                                    @csrf
-                                    @method('delete')
-                                    <x-danger-button onclick="event.preventDefault(); this.closest('form').submit();">
-                                        delete
-                                    </x-danger-button>
-                                </form>
-                            </div>
->>>>>>> f28ec87437cf7193a3b0ac9022e14d7bd1bf18cb
                             </div>
                              </div>
                         </li>    

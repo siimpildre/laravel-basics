@@ -12,13 +12,20 @@
                     <form method="POST" action="{{ route('books.update', $book) }}">
                         @csrf
                         @method('patch')
-                        <x-text-input name="first_name" value="{{ old('first_name', $book->first_name) }}" />
-                        <x-text-input name="last_name" value="{{ old('last_name', $book->last_name) }}" />
+                        <x-input-label for="title" value="Title" />
+                        <x-text-input name="title" value="{{ old('title', $book->title) }}" />
+                        <x-input-error :messages="$errors->get('title')" class="mt-2" />
                         
-                        <x-input-error :messages="$errors->get('message')" class="mt-2" />
+                        <x-input-label for="release_date" value="Relese date" />
+                        <x-text-input name="release_date" value="{{ old('release_date', $book->release_date) }}" />
+                        <x-input-error :messages="$errors->get('release_date')" class="mt-2" />
+                        
+                        <x-input-label for="price" value="Price" />
+                        <x-text-input name="price" value="{{ old('price', $book->price) }}" />
+                        <x-input-error :messages="$errors->get('price')" class="mt-2" />
                         <div class="mt-4 space-x-2">
                             <x-primary-button>{{ __('Save') }}</x-primary-button>
-                            <a href="{{ route('authors.index') }}">{{ __('Cancel') }}</a>
+                            <a href="{{ route('books.index') }}">{{ __('Cancel') }}</a>
                         </div>
                     </form>
                 </div>
